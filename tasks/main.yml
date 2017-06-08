@@ -13,7 +13,7 @@
   apt:
     name: "{{ docker_package }}={{ docker_version}}"
     state: present
-  when: ansible_os_family == 'Ubuntu') and (docker_version is defined)
+  when: (ansible_os_family == 'Ubuntu') and (docker_version is defined)
 
 - name: Ensure Docker is started and enabled at boot.
   service:
